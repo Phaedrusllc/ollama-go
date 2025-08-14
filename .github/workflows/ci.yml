@@ -5,7 +5,11 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   lint-and-unit:
@@ -33,13 +37,11 @@ jobs:
             ${{ runner.os }}-go-
 
       - name: Install golangci-lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: v1.62.2
-          args: --timeout=5m
+        run: |
+          go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.62.2
 
       - name: Run golangci-lint
-        run: golangci-lint run ./...
+        run: $(go env GOPATH)/bin/golangci-lint run ./...
 
       - name: go vet
         run: go vet ./...
