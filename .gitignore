@@ -1,0 +1,30 @@
+# Go build outputs
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+
+# Go coverage / caches
+coverage.out
+.cache/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Env and local configs
+.env
+.env*
+
+# Exclude reference repos present in workspace
+ollama-python/
+openai-go/
+*.local
+
+# Logs
+*.log
