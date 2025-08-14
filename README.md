@@ -60,5 +60,9 @@ How This Was Built
 Notes
 - This is an unofficial client implemented for parity with the Python client’s observable behavior. For production stability and long‑term support, verify against your Ollama version and models.
 
+Badges
+- CI: https://github.com/phaedrusllc/ollama-go/actions/workflows/ci.yml
+- Go Reference: https://pkg.go.dev/github.com/phaedrusllc/ollama-go/ollama
+
 License
 - MIT License © 2025 Phaedrus LLC
